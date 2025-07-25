@@ -1,0 +1,22 @@
+{% extends 'padre.html'%}
+
+{% block title %} <h1>Eliminar Artista</h1> {% endblock %}
+
+{% block content %}
+
+<div style="max-width: 600px; margin: 40px auto; padding: 30px; border: 1px solid #ccc; border-radius: 12px; background-color: #fdfdfd; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+
+<h2> Eliminar Artista </h2>
+
+<h2>Eliminar</h2>
+
+¿Estás seguro de que deseas eliminar el artista ?
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" style="text-decoration: none; color: white; background-color: #33293dff; padding: 5px 10px; border-radius: 5px;">Confirmar</button>
+</form>
+
+<a href="{% url 'lista_canciones' %}" style="text-decoration: none; color: white; background-color: #3a5677ff; padding: 5px 10px; border-radius: 5px;">Cancelar</a>
+
+{% endblock %}

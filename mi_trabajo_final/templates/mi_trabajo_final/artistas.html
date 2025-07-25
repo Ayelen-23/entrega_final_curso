@@ -1,0 +1,31 @@
+{% extends 'padre.html'%}
+
+{% block title %} <h1> Artistas </h1>
+
+<p> Busca a tus artistas favoritos </p>
+
+{% endblock %}
+
+{% block content %}
+
+<div style="max-width: 600px; margin: 0 auto; padding: 20px; text-align: center;">
+
+<form method="GET" action="{% url 'buscar_artistas' %}">
+    <input type="text" name="nombre" placeholder="Nombre del artista" value="{{ nombre }}">
+    <button type="submit">Buscar</button>
+</form>
+
+
+
+<div style="max-width: 600px; margin: 40px auto; padding: 30px; border: 1px solid #ccc; border-radius: 12px; background-color: #fdfdfd; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+<h2 style="margin-top: 30px;">Artistas encontrados:</h2>
+
+<ul style="list-style: none; padding: 0;">
+    {% for artista in artistas %}
+        <li> Nombre: {{ artista.nombre }} </li>
+        
+    {% empty %}
+        <li>No se encontraron artistas.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

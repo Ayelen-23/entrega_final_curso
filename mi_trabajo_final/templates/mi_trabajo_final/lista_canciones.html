@@ -1,0 +1,34 @@
+{% extends 'padre.html'%}
+
+{% block title %} <h1> Canciones </h1>
+
+<p> Tus canciones guardadas </p>
+
+{% endblock %}
+
+
+
+{% block content %}
+
+<h2 style="margin-top: 30px; text-align: center; color: #2c3e50;">Lista de Canciones</h2>
+
+<div style="margin-top: 20px; display: flex; flex-direction: column; gap: 15px; max-width: 700px; margin-left: auto; margin-right: auto;">
+
+    {% for cancion in canciones %}
+    <div 
+        <h3 style="margin: 0 0 10px 0; color: #34495e;"> {{ cancion.titulo }}</h3>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <a href="{% url 'detalle_canciones' cancion.pk %}" style="text-decoration: none; color: white; background-color: #424e55ff; padding: 5px 10px; border-radius: 5px;">Detalle</a>
+            <a href="{% url 'editar_canciones' cancion.pk %}" style="text-decoration: none; color: white; background-color: #503c18ff; padding: 5px 10px; border-radius: 5px;">Editar</a>
+            <a href="{% url 'eliminar_canciones' cancion.pk %}" style="text-decoration: none; color: white; background-color: #461f18ff; padding: 5px 10px; border-radius: 5px;">Eliminar</a>
+        </div>
+    </div>
+    {% empty %}
+    <p style="text-align: center; color: #7f8c8d;">No se encontraron canciones.</p>
+    {% endfor %}
+
+</div>
+
+{% endblock %}
+
+

@@ -1,0 +1,21 @@
+{% extends 'padre.html'%}
+
+{% block title %} <h1> Artistas </h1>
+
+<p> Tus artistas guardados </p>
+
+{% endblock %}
+
+
+{% block content %}
+
+<div style="max-width: 600px; margin: 40px auto; padding: 30px; border: 1px solid #ccc; border-radius: 12px; background-color: #fdfdfd; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+
+<h1> Detalle de Artistas </h1>
+
+<p><strong>Nombre:</strong> {{ artista.nombre }}</p>
+<p><strong>Nacionalidad:</strong> {{ artista.nacionalidad }}</p>
+<p><strong>Fecha de Inicio:</strong> {{ artista.fecha_de_inicio }}</p>
+<p><strong>Género Musical:</strong> {{ artista.genero_musical }}</p>
+
+{% endblock %}

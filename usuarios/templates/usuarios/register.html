@@ -1,0 +1,24 @@
+{% extends 'padre.html'%}
+
+{% block title %} <h1>Registro</h1>
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<div style="max-width: 600px; margin: 40px auto; padding: 30px; border: 1px solid #ccc; border-radius: 12px; background-color: #fdfdfd; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+    <h2>Registro</h2>
+    <p>Por favor, completa el siguiente formulario para registrarte.</p>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type= "submit" style="text-decoration: none; color: white; background-color: #33293dff; padding: 5px 10px; border-radius: 5px;">Guardar</button>
+
+</form>
+
+{% endblock %}

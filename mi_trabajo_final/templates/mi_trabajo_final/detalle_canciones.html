@@ -1,0 +1,20 @@
+{% extends 'padre.html'%}
+
+{% block title %} <h1> Canciones </h1>
+
+<p> Tus canciones guardadas </p>
+
+{% endblock %}
+
+
+{% block content %}
+
+<div style="max-width: 600px; margin: 40px auto; padding: 30px; border: 1px solid #ccc; border-radius: 12px; background-color: #fdfdfd; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+
+<h1> Detalle de Canciones </h1>
+
+<p><strong>Titulo:</strong> {{ cancion.titulo }}</p>
+<p><strong>Artista:</strong> {{ cancion.artista.nombre }}</p>
+<p><strong>Disco:</strong> {{ cancion.disco }}</p>
+
+{% endblock %}
